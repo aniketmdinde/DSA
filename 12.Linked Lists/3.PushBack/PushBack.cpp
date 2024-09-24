@@ -25,7 +25,7 @@ public:
         if (head == NULL)
         {
             Node *n = new Node(data);
-            head = tail = n;
+            this->head = this->tail = n;
             return;
         }
         // Case 2: Linked List Not Empty i.e. head != NULL and tail != NULL
@@ -34,6 +34,25 @@ public:
             Node *n = new Node(data);
             n->next = head;
             head = n;
+        }
+    }
+
+    // push a node at the end of linked list
+    void push_back(int data)
+    {
+        // Case 1: Linked List Empty i.e. head = NULL and tail = NULL
+        if (head == NULL)
+        {
+            Node *n = new Node(data);
+            head = tail = n;
+            return;
+        }
+        // Case 2: Linked List Not Empty i.e. head != NULL and tail != NULL
+        else
+        {
+            Node *n = new Node(data);
+            tail->next = n;
+            tail = n;
         }
     }
 };
