@@ -11,6 +11,18 @@ public:
     Node *next;
     Node(int d) : data(d), next(NULL) {}
 
+    // return data
+    int getData()
+    {
+        return data;
+    }
+
+    // returns next
+    Node *getNext()
+    {
+        return next;
+    }
+
     friend class LinkedList;
 };
 
@@ -59,4 +71,27 @@ public:
             tail = n;
         }
     }
+
+    // returns the head
+    Node *begin()
+    {
+        return head;
+    }
 };
+
+int main()
+{
+    LinkedList l;
+    l.push_front(1);
+    l.push_front(0);
+    l.push_back(2);
+
+    // Print LL
+    Node *head = l.begin();
+    while (head != NULL)
+    {
+        cout << head->getData() << " -> ";
+        head = head->next;
+    }
+    cout << "NULL" << endl;
+}

@@ -1,13 +1,17 @@
 #include <iostream>
 using namespace std;
 
+class LinkedList;
+
 class Node
 {
-public:
     int data;
-    Node *next;
 
+public:
+    Node *next;
     Node(int d) : data(d), next(NULL) {}
+
+    friend class LinkedList;
 };
 
 class LinkedList

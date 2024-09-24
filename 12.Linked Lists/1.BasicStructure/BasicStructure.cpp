@@ -1,13 +1,17 @@
 #include <iostream>
 using namespace std;
 
+class LinkedList; // Forward Declaration
+
 class Node
 {
-public:
     int data;
-    Node *next;
 
+public:
+    Node *next;
     Node(int d) : data(d), next(NULL) {} // Initialization list
+
+    friend class LinkedList; // This gives LinkedList class access to private variables
 };
 
 class LinkedList
