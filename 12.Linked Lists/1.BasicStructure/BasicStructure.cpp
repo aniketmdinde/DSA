@@ -3,10 +3,10 @@ using namespace std;
 
 class Node
 {
+public:
     int data;
     Node *next;
 
-public:
     Node(int d) : data(d), next(NULL) {} // Initialization list
 };
 
