@@ -71,6 +71,25 @@ public:
     {
         return head;
     }
+
+    // Insert an element
+    void insert(int data, int pos)
+    {
+        if (pos == 0)
+        {
+            push_front(data);
+            return;
+        }
+
+        // Otherwise
+        Node *temp = head;
+        for (int jump = 1; jump <= pos - 1; jump++)
+            temp = temp->next;
+
+        Node *n = new Node(data);
+        n->next = temp->next;
+        temp->next = n;
+    }
 };
 
 int main()
@@ -78,7 +97,11 @@ int main()
     LinkedList l;
     l.push_front(1);
     l.push_front(0);
-    l.push_back(2);
+    l.push_back(3);
+    l.push_back(4);
+
+    l.insert(2, 2);
+    l.insert(10, 0);
 
     // Print LL
     Node *head = l.begin();
