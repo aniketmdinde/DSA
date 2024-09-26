@@ -2,10 +2,6 @@
 #include <stack>
 using namespace std;
 
-#include <iostream>
-#include <stack>
-using namespace std;
-
 void insertAtBottom(stack<int> &s, int data)
 {
     // Base case
