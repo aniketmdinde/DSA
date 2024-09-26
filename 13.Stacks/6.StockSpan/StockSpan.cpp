@@ -8,7 +8,7 @@ void stockSpan(int prices[], int n, int span[])
 
     // initialise the problem
     s.push(0);
-    span[0] = 0;
+    span[0] = 1;
 
     // loop for rest of the days
     for (int i = 1; i < n; i++)
