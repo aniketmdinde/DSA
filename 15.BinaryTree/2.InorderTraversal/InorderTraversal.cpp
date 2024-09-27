@@ -3,6 +3,7 @@ using namespace std;
 
 // Input: 1 2 4 -1 -1 5 7 -1 -1 -1 3 -1 6 -1 -1
 // Preorder: 1 2 4 5 7 3 6
+// Inorder: 4 2 5 7 1 3 6
 
 class Node
 {
@@ -17,14 +18,6 @@ public:
         left = right = NULL;
     }
 };
-
-// Class based approach
-/*class Tree
-{
-    Node *root;
-
-public:
-};*/
 
 // Preorder Build of Tree - Root Left Right
 Node *buildTree()
@@ -55,8 +48,19 @@ void printPreorder(Node *root)
     printPreorder(root->right);
 }
 
+// Inorder Traversal of Tree
+void printInorder(Node *root)
+{
+    if (root == NULL)
+        return;
+
+    printInorder(root->left);
+    cout << root->data << " ";
+    printInorder(root->right);
+}
+
 int main()
 {
     Node *root = buildTree();
-    printPreorder(root);
+    printInorder(root);
 }
