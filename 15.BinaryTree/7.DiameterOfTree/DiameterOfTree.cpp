@@ -174,14 +174,6 @@ int diameter(Node *root)
     return max(D1, max(D2, D3));
 }
 
-// Optimized Diameter
-class HDPair
-{
-public:
-    int diameter;
-    int height;
-};
-
 int main()
 {
     Node *root = levelorderBuild();
