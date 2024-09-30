@@ -44,6 +44,21 @@ void printInorderTraversal(Node *root)
     printInorderTraversal(root->right);
 }
 
+bool search(Node *root, int key)
+{
+    // Base case
+    if (root == NULL)
+        return false;
+
+    // Recursive case
+    if (root->data == key)
+        return true;
+    else if (key < root->data)
+        return search(root->left, key);
+    else
+        return search(root->right, key);
+}
+
 int main()
 {
     Node *root = NULL;
@@ -56,6 +71,13 @@ int main()
     }
 
     printInorderTraversal(root);
+    cout << endl;
+
+    int key;
+    cout << "Enter key to search: ";
+    cin >> key;
+
+    cout << search(root, key) << endl;
 
     return 0;
 }
