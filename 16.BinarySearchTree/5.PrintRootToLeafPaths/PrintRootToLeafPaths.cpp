@@ -181,7 +181,6 @@ int main()
     cout << endl;
 
     vector<int> path;
-
     printRootToLeafPaths(root, path);
 
     return 0;
