@@ -7,8 +7,8 @@ class Compare
 public:
     bool operator()(int a, int b)
     {
-        // return a > b; // MAX HEAP
-        return a < b; // MIN HEAP
+        return a > b; // MIN HEAP
+        // return a < b; // MAX HEAP
     }
 };
 
