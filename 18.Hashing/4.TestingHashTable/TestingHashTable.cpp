@@ -117,4 +117,40 @@ public:
         if (load_factor > 0.7)
             rehash();
     }
+
+    void printHashTable()
+    {
+        for (int i = 0; i < table_size; i++)
+        {
+            cout << "Bucket " << i << " ";
+
+            Node<T> *temp = table[i];
+
+            while (temp != NULL)
+            {
+                cout << temp->key << " -> ";
+                temp = temp->next;
+            }
+
+            cout << "NULL" << endl;
+        }
+    }
 };
+
+int main()
+{
+    HashTable<int> h;
+
+    h.insert("Mango", 100);
+    h.insert("Apple", 120);
+    h.insert("Banana", 140);
+    h.insert("Orange", 240);
+    h.insert("Papaya", 280);
+    h.insert("Grapes", 320);
+    h.insert("Guava", 445);
+    h.insert("Strawberry", 90);
+
+    h.printHashTable();
+
+    return 0;
+}

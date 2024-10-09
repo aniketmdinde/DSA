@@ -62,7 +62,7 @@ public:
         int index = hash_function(key); // 0 to tablesize-1
 
         // Insert into linked list
-        Node<t> *n = new Node<T>(key, value);
+        Node<T> *n = new Node<T>(key, value);
 
         n->next = table[index];
         table[index] = n;
